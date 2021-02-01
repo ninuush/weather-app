@@ -1,0 +1,40 @@
+form {
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 20px;
+  max-width: 620px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+div.forecast {
+  display: block;
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+h1 {
+  border: 1px solid black;
+  border-radius: 20px;
+  max-width: 620px;
+  display: block;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+div.col {
+  border: 1px solid black;
+  border-radius: 20px;
+  text-align: center;
+  margin: 10px auto;
+  padding: 10px 12px 20px;
+}
+
+span.weather-emoji {
+  font-size: 50px;
+}
+
+div.location {
+  text-align: left;
+}
