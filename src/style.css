@@ -38,3 +38,7 @@ span.weather-emoji {
 div.location {
   text-align: left;
 }
+
+a {
+  text-align: center;
+}
