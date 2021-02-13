@@ -39,7 +39,7 @@ function displayTemperature(response) {
   let iconElement = document.querySelector("#icon");
   temperatureElement.innerHTML = Math.round
   (response.data.main.temp);
-  cityElement.innterHTML = response.data.name;
+  cityElement.innerHTML = response.data.name;
   descriptionElement.innerHTML = response.data.weather[0].description;
   humidityElement.innerHTML = `Humidity: ${response.data.main.humidity}%`;
   windspeedElement.innerHTML = `Windspeed: ${Math.round(response.data.wind.speed)} km/h`;
@@ -47,7 +47,19 @@ function displayTemperature(response) {
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
-let apiKey = "8bc187cbfbf86ab7d6f8399ce1d178ae";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Naters&appid=${apiKey}&units=metric`;
+function search(city) {
+  let apiKey = "8bc187cbfbf86ab7d6f8399ce1d178ae";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayTemperature);
+}
 
-axios.get(apiUrl).then(displayTemperature);
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#text-input");
+  search(cityInputElement.value);
+}
+
+search("Naters");
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
