@@ -12,7 +12,7 @@ if (hours < 10) {
 let minutes = now.getMinutes();
 
 if (minutes < 10) {
-  minutes = `0${minutes};`;
+  minutes = `0${minutes}`;
 }
 
 let days = [
@@ -30,20 +30,21 @@ time.innerHTML = `${day}, ${hours}:${minutes}`;
 
 // form
 
-function showTemperature(response) {
-  document.querySelector("#location").innerHTML = response.data.name;
-  document.querySelector("#temperature").innerHTML = Math.round(
-    response.data.main.temp
-  );
+function displayTemperature(response) {
+  let temperatureElement = document.querySelector("#temperature");
+  let cityElement = document.querySelector("#location");
+  let descriptionElement = document.querySelector("#description");
+  let humidityElement = document.querySelector("#humidity");
+  let windspeedElement = document.querySelector("#windspeed");
+  temperatureElement.innerHTML = Math.round
+  (response.data.main.temp);
+  cityElement.innterHTML = response.data.name;
+  descriptionElement.innerHTML = response.data.weather[0].description;
+  humidityElement.innerHTML = `Humidity: ${response.data.main.humidity}%`;
+  windspeedElement.innerHTML = `Windspeed: ${Math.round(response.data.wind.speed)} km/h`
 }
 
-function searchCity(event) {
-  event.preventDefault();
-  let apiKey = "8bc187cbfbf86ab7d6f8399ce1d178ae";
-  let city = document.querySelector("#text-input").value;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(showTemperature);
-}
+let apiKey = "8bc187cbfbf86ab7d6f8399ce1d178ae";
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Naters&appid=${apiKey}&units=metric`;
 
-let form = document.querySelector("form");
-form.addEventListener("submit", searchCity);
+axios.get(apiUrl).then(displayTemperature);
