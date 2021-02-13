@@ -1,7 +1,7 @@
 form {
   margin: 0 auto;
   padding: 20px;
-  border: 1px solid black;
+  border: 2px solid black;
   border-radius: 20px;
   max-width: 620px;
   text-align: center;
@@ -15,7 +15,7 @@ div.forecast {
 }
 
 h1 {
-  border: 1px solid black;
+  border: 2px solid black;
   border-radius: 20px;
   max-width: 620px;
   display: block;
@@ -24,7 +24,7 @@ h1 {
 }
 
 div.col {
-  border: 1px solid black;
+  border: 2px solid black;
   border-radius: 20px;
   text-align: center;
   margin: 10px auto;
@@ -42,4 +42,19 @@ div.location {
 a.github {
   display: block;
   text-align: center;
+}
+
+#description,
+#windspeed,
+#humidity {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+#description {
+  text-transform: capitalize;
+}
+
+header {
+  margin-top: 20px;
 }
