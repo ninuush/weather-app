@@ -39,7 +39,7 @@ div.location {
   text-align: left;
 }
 
-a.github {
+p#githubLink {
   display: block;
   text-align: center;
 }
