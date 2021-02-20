@@ -58,3 +58,17 @@ a.github {
 header {
   margin-top: 20px;
 }
+
+.location .active {
+  color: black;
+  cursor: default;
+}
+
+.location .active:hover {
+  text-decoration: none;
+}
+
+#celsius,
+#fahrenheit {
+  text-decoration: none;
+}
